@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<title>Competa demo</title>
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body ng-controller="AppController">
+
+<h1>Messages ({{total}})</h1>
+
+<input ng-model="name" placeholder="name">
+<textarea ng-model="message" placeholder="message"></textarea>
+<button ng-click="addItem()" ng-disabled="isDisabled()">Say it!</button>
+
+<ul>
+  <li ng-repeat="item in items">
+    <p>{{item.name}} says: ({{item.timestamp|date:'medium'}})</p>
+    <div>{{item.message}}</div>
+  </li>
+</ul>
+
+<script src="scripts.js"></script>
+<script>
+angular
+.module('app', ['firebase'])
+.controller('AppController', function($scope, $firebase){
+    
+    var db = new Firebase('https://competa.firebaseio.com/demo123');
+    $scope.items = $firebase(db);
+    $scope.total = 0;
+    
+    $scope.addItem = function(){
+        var newItem = {
+            name: $scope.name,
+            message: $scope.message,
+            timestamp: (new Date()).getTime()
+        };
+        
+        $scope.items.$add(newItem);
+        $scope.name = '';
+        $scope.message = '';
+    };
+    
+    $scope.isDisabled = function(){
+        return !$scope.name || !$scope.message;
+    };
+
+    db.on('child_added', function(){
+        $scope.total += 1;
+    });    
+    
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<link rel="stylesheet" href="http://rabo.demo123.nl/style.css">
+</head>
+<body ng-controller="AppController">
+
+<img src="http://rabo.demo123.nl/rabobank.jpg">
+
+<h1>Transacties</h1>
+<p>Totaal: {{total|currency:"&euro; "}}</p>
+<input ng-model="name" placeholder="naam">
+<input ng-model="amount" placeholder="bedrag">
+<button ng-click="addItem()">toevoegen</button>
+
+<ul>
+  <li ng-repeat="item in items">
+    {{item.name}}
+    <span>{{item.amount|currency:"&euro; "}}</span>
+  </li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+<script>
+var app = angular.module('app', []);
+app.controller('AppController', function($scope){
+    $scope.items = [];
+    
+    $scope.total = 0;
+    
+    $scope.addItem = function(){
+        var newItem = {
+            name: $scope.name,
+            amount: $scope.amount
+        }
+        $scope.total += parseInt($scope.amount);
+        $scope.items.push(newItem);
+        $scope.name = '';
+        $scope.amount = '';
+    };
+});
+</script>
+</body>
+</html>

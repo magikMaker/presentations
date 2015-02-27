@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<body ng-controller="AppController">
+
+<h1>Transacties</h1>
+
+<input ng-model="world">
+
+<ul>
+  <li ng-repeat="item in items">
+    {{item.name}}
+    <span>{{item.amount|currency:"&euro; "}}</span>
+  </li>
+</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+<script>
+var app = angular.module('app', []);
+app.controller('AppController', function($scope){
+
+    $scope.items = [
+    	{
+    		"name": "John",
+    		"amount": 300
+    	},
+    	{
+    		"name": "Jane",
+    		"amount": 450
+    	},
+    	{
+    		"name": "Jennifer",
+    		"amount": 675
+    	}
+    ];
+    
+});
+</script>
+</body>
+</html>

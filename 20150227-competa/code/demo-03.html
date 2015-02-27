@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<body ng-controller="AppController">
+
+<h1>Messages</h1>
+
+<input ng-model="world">
+
+<ul>
+  <li ng-repeat="item in items">
+    <p>{{item.name}}</p>
+    <div>{{item.message}}</div>
+  </li>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script>
+angular
+    .module('app', [])
+    .controller('AppController', function($scope){
+
+        $scope.items = [
+    	    {
+    		    "name": "John",
+                "message": "My name is John and I'm a mechanic."
+            },
+    	    {
+    		    "name": "Jane",
+    		    "message": "My name is Jane."
+    	    },
+    	    {
+    		    "name": "Jennifer",
+                "message": "Hi, here a short message from Jennifer"
+            }
+    ];
+    
+});
+</script>
+</body>
+</html>

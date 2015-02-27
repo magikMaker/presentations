@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans+Condensed:300|Oswald);
+
+body, 
+html {
+  background-color: #fff;
+  font-family: 'Myriad', 'Myriad Pro', 'Droid Sans', 'Oswald', Helvetica, Arial, sans-serif;
+
+  font-size: 16px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+* {
+	z-index: 10;
+}
+
+body {
+  padding: 0.5rem;
+  position: relative;
+} 
+
+/* background image */
+img {
+  bottom: 0;
+  -webkit-filter: blur(10px);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* heading */
+h1 {
+	font-weight: bold;
+	text-align: center;
+}
+
+
+/* transaction list */
+
+dd {}
+
+ul {
+	clear: both;
+	margin: 1rem 0 0 0;
+	overflow: auto;
+	padding: 0;
+}
+
+li {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(10,10,10,0.2);
+  margin: 0;
+  overflow: auto;
+  padding: 0.5em;
+  width: 93%;
+}
+
+li:last-child {
+	border: none;
+}
+
+li span {
+	float: right;
+	font-weight: bold;
+}
+
+/* form */
+
+input {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #dadada;
+  border-radius: 4px;
+  xxbox-shadow: 0 0 1px 0 rgba(90, 90, 90, 0.8);
+  font-size: 1rem;
+  height: 1.2rem;
+  margin-bottom: 0.3rem;
+  padding: 0.8rem 0.2rem;
+  width: 97%;
+}
+
+input:focus { 
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+  outline: none;
+}
+
+button {
+  background: #f60;
+  border: none;
+  border-radius: 7px/50%;
+  box-shadow: 0 0 3px 0 rgba(90, 90, 90, 0.8);
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  float: right;
+  font-size: 1rem;
+  height: 1.2rem;
+  line-height: 0.2rem;
+  margin: 0.2rem 3% 1rem 10rem;
+  outline: none;
+  padding: 0.8rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  width: 10rem;
+}
+
+button:disabled {
+	background-color: rgba(90, 90, 90, 0.8);
+	color: #999;
+}
