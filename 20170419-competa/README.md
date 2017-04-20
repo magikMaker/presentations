@@ -6,11 +6,11 @@ by Bjørn Wikkeling <bjorn@wikkeling.com>
 Contents of this presentation:
 ------------------------------
 
-/api
-/cms
-/doc
-/presentation
-/swagger-editor
+/api  
+/cms  
+/doc  
+/presentation  
+/swagger-editor  
 
 /api
 ----
