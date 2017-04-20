@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - JavaScript Introspection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script>
+    var __options = {"title":"Competa Todos CMS","flags":{"complexity":{"commonjs":true,"logicalor":true,"switchcase":true,"forin":false,"trycatch":false,"newmi":true},"jshint":{"parserOptions":{"ecmaVersion":6,"sourceType":"module"},"extends":"airbnb-base","plugins":["mocha"],"rules":{"linebreak-style":"off","arrow-body-style":["error","as-needed"],"arrow-parens":["error","as-needed"],"comma-dangle":["error","never"],"global-require":"error","import/no-extraneous-dependencies":["error",{"devDependencies":true}],"indent":["error",4,{"SwitchCase":1}],"keyword-spacing":["error",{"after":true,"before":true,"overrides":{"catch":{"after":false},"for":{"after":false},"if":{"after":false},"switch":{"after":false},"while":{"after":false}}}],"max-len":["warn",{"code":120,"ignoreUrls":true,"ignoreComments":false,"ignoreRegExpLiterals":true,"ignoreStrings":true,"ignoreTemplateLiterals":true,"tabWidth":4}],"no-confusing-arrow":0,"no-console":0,"no-extra-parens":["error","all",{"conditionalAssign":true,"nestedBinaryExpressions":false,"returnAssign":true}],"no-path-concat":"error","no-plusplus":0,"no-mixed-operators":["error",{"groups":[["+","-","*","/","%","**"],["&","|","^","~","<<",">>",">>>"],["==","!=","===","!==",">",">=","<","<="],["&&","||"],["in","instanceof"]],"allowSamePrecedence":true}],"no-nested-ternary":0,"no-restricted-properties":["error",{"object":"arguments","property":"callee","message":"arguments.callee is deprecated"},{"property":"__defineGetter__","message":"Please use Object.defineProperty instead."},{"property":"__defineSetter__","message":"Please use Object.defineProperty instead."}],"no-use-before-define":0,"object-curly-spacing":["error","never"],"padded-blocks":["error",{"blocks":"never","classes":"always","switches":"always"}],"quote-props":["error","as-needed",{"keywords":true,"unnecessary":false}],"valid-jsdoc":["warn",{"matchDescription":".{5,}\\s+","prefer":{"arg":"param","argument":"param","augments":"extends","const":"constant","constructor":"class","desc":"description","defaultValue":"default","exception":"throws","fileoverview":"file","fires":"emit","func":"function","host":"external","overview":"file","private":"access private","prop":"property","protected":"access protected","public":"access public","return":"returns","virtual":"abstract"},"preferType":{"Boolean":"boolean","Function":"function","Null":"null","Number":"number","Object":"object","String":"string","Symbol":"symbol","Undefined":"undefined"},"requireParamDescription":false,"requireReturn":true,"requireReturnDescription":false,"requireReturnType":false}]},"globals":{"after":false,"afterEach":false,"before":false,"beforeEach":false,"describe":false,"it":false,"xit":false}}}}
+  </script>
+
+  <link href="assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="assets/css/plato.css" rel="stylesheet">
+  <link href="assets/css/plato-display.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Competa Todos CMS</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="reportBlock lineCount">
+                <div class="reportContent">
+                    <small class="chart-label">Total / Average Lines</small>
+                    <h1>32 / 10</h1>
+                </div>
+                <div id="chart_historical_sloc" class="chart js-chart"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="reportBlock maintainability">
+                <div class="reportContent">
+                    <small class="chart-label">Average Maintainability</small>
+                    <h1>96.45</h1>
+                </div>
+                <div id="chart_historical_maint" class="chart js-chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="reportBlock maintainabilityList">
+                <h2 class="reportTitle">Worst Maintainability Scores</h2>
+                <ul class="list-unstyled">
+
+                    <li>
+                        <strong>89 score</strong>
+                        <small>src/index.js</small>
+                    </li>
+
+                    <li>
+                        <strong>100 score</strong>
+                        <small>src/app.js</small>
+                    </li>
+
+                    <li>
+                        <strong>100 score</strong>
+                        <small>src/todos.js</small>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="reportBlock locList">
+                <h2 class="reportTitle">Largest Files</h2>
+                <ul class="list-unstyled">
+
+                    <li>
+                        <strong>12 lines</strong>
+                        <small>src/todos.js</small>
+                    </li>
+
+                    <li>
+                        <strong>11 lines</strong>
+                        <small>src/app.js</small>
+                    </li>
+
+                    <li>
+                        <strong>9 lines</strong>
+                        <small>src/index.js</small>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="reportBlock lintList">
+                <h2 class="reportTitle">Lint Warnings</h2>
+                <ul class="list-unstyled">
+
+                    <li>
+                        <strong>1 lint errors</strong>
+                        <small>src/app.js</small>
+                   </li>
+
+                    <li>
+                        <strong>1 lint errors</strong>
+                        <small>src/index.js</small>
+                   </li>
+
+                    <li>
+                        <strong>1 lint errors</strong>
+                        <small>src/todos.js</small>
+                   </li>
+
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="assets/scripts/plato-display.js"></script>
+
+</body>
+</html>

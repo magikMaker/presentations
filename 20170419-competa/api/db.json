@@ -1,0 +1,33 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "done": true,
+      "title": "create API"
+    },
+    {
+      "done": true,
+      "title": "Create documentation",
+      "id": 2
+    },
+    {
+      "done": false,
+      "title": "Create a CMS",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "done": false,
+      "title": "create Reporting"
+    },
+    {
+      "id": 5,
+      "title": "New Todo Item",
+      "done": true
+    },
+    {
+      "title": "add another API",
+      "id": 6
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+---
+swagger: '2.0'
+info:
+  description: "Competa ToDo list API description"
+  version: 1.0.0
+  title: Competa ToDo API
+host: "localhost:3000"
+basePath: "/"
+tags:
+- name: "todos"
+  description: "Todo list"
+schemes:
+- "http"
+paths:
+  /todos:
+    get:
+      summary: Returns all Todos
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/TodoItem'
+    post:
+      summary: Saves a new Todo
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: body
+          in: body
+          description: Todo Item to be saved
+          required: true
+          schema:
+            $ref: "#/definitions/TodoItem"
+      responses:
+        201:
+          description: Created
+definitions:
+  TodoItem:
+    type: object
+    required:
+      - title
+      - done
+    properties:
+      id:
+        type: integer
+        format: integer
+      title:
+        type: string
+        example: New Todo Item
+        description: The title of the Todo Item
+      done:
+        type: boolean
+        format: boolean
+        description: whether or not the todo has been done
